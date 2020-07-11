@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --bg_color--: bisque;
+        }
+
+        body{
+            background-color: var(--bg_color--);
+        }
+
+        #note{
+            color:coral;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    
+    <input  id="colors">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <!-- <input type="submit" value="Submit"> -->
+    <div id="note"></div>
+
+<script>
+    
+    function myFunction() {
+        var colorType, x, text;
+
+        // Get the value of the input field with id="colors"
+  x = document.getElementById("colors").value;
+
+  if(x){
+  colorType = x; 
+    getComputedStyle(document.documentElement).getPropertyValue('--bg_color--');
+     document.documentElement.style.setProperty('--bg_color--', colorType);
+     text= "the color is " + colorType;
+  }else{
+      text= "enter a color"
+  }
+  document.getElementById("note").innerHTML = text;
+
+    }
+
+</script>
+</body>
+</html>
