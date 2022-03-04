@@ -1,14 +1,32 @@
 "use strict";
 
-//In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+/*******In the global execution context (outside of any function), this refers to the global object whether in strict mode or not. /*******/
 this.a = 37;
 console.log(a); // 37
 console.log(this);
 
-//Method(function inside Object)
-/*   */
+/******* Method(function inside Object) *****/
+const person = {
+  first_name: "Jame",
+  last_name: "William",
 
-// function expression
+  full_name: function () {
+    console.log(this);
+    console.log(this.first_name + " " + this.last_name);
+  },
+};
+
+const person2 = {
+  first_name: "Mary",
+  last_name: "Bill",
+};
+
+person2.full_name = person.full_name;
+//this is pointing to the Object calling the method
+person.full_name();
+person2.full_name();
+
+/******* Simple function /*******/
 function test_this() {
   const x = 45;
   console.log(this);
@@ -21,5 +39,3 @@ function test_this() {
 }
 
 test_this();
-
-// this and object
