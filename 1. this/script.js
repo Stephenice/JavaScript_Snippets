@@ -1,8 +1,9 @@
 "use strict";
 
 /*******In the global execution context (outside of any function), this refers to the global object whether in strict mode or not. /*******/
+var b = 12;
 this.a = 37;
-console.log(a); // 37
+console.log(this.b); // 37
 console.log(this);
 
 /******* Method(function inside Object) *****/

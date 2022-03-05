@@ -35,13 +35,21 @@
         this will be Undefined. see code line 23
       </p>
 
-      <p>Arrow function: it doesnt have its own this. lexical this.</p>
+      <p>
+        Arrow function: it doesnt have its own this. lexical this. Even if the
+        arrow function is called by Object it will point to the window Object
+      </p>
 
       <p>
         Event Listener: this will point to the DOM element that the handler is
         attached to.
       </p>
 
+      <p>
+        Note: Object is not a block scope and var create a property in the
+        global object.
+      </p>
+      <p>Note: dont use arrow function as a method.</p>
       <a
         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
         >mdn</a
