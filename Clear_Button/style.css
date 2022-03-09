@@ -1,0 +1,10 @@
+.clear_container {
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.clearX {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
