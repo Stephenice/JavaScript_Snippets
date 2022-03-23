@@ -10,7 +10,6 @@
   </head>
   <body>
     <main>
-      <p class="test">f</p>
       <h1>Topic: this</h1>
       <p>
         this: special variable that is created for every execution context(every
@@ -24,27 +23,34 @@
         <strong>Question 1: </strong> What does its means How the function is
         called?
       </p>
-      <p>
-        Method(function inside Object): this will point to the Object that is
-        calling the method. see code line 9
-      </p>
+      <ul>
+        <li>
+          Method(function inside method): this will point to the Object that is
+          calling the method. see code line 9
+        </li>
 
-      <p>
-        Simple function: this will point to the global Object which is the
-        window Object if its not in strict mode but if its will be strict mode
-        this will be Undefined. see code line 23
-      </p>
+        <li>
+          Simple function: this will point to the global Object which is the
+          window Object if its not in strict mode but if its will be strict mode
+          this will be Undefined. see code line 23
+        </li>
 
-      <p>
-        Arrow function: it doesnt have its own this. lexical this. Even if the
-        arrow function is called by Object it will point to the window Object
-      </p>
+        <li>
+          Arrow function: it doesnt have its own this. lexical this. Even if the
+          arrow function is called by Object it will point to the window Object.
+          <strong>Note: Dont use Arrow function as Method.</strong>
+        </li>
 
-      <p>
-        Event Listener: this will point to the DOM element that the handler is
-        attached to.
-      </p>
-
+        <li>
+          Event Listener: this will point to the DOM element that the handler is
+          attached to.
+        </li>
+        <li>
+          Nested Function(inside Method): will be conside as simple function if
+          nested. Solution to get this keyword by creating a self variable
+          (scope chain).
+        </li>
+      </ul>
       <p>
         Note: Object is not a block scope and var create a property in the
         global object.

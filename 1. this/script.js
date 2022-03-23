@@ -6,14 +6,21 @@ this.a = 37;
 console.log(this.b); // 37
 console.log(this);
 
-/******* Method(function inside Object) *****/
+/******* Method(function inside method) *****/
 const person = {
   first_name: "Jame",
   last_name: "William",
+  age: 20,
 
   full_name: function () {
-    console.log(this);
     console.log(this.first_name + " " + this.last_name);
+
+    /******* Nested Function(inside Method)*****/
+    const self = this;
+    const adult = function () {
+      console.log(self.age >= 18 && self.age >= 21);
+    };
+    adult();
   },
 };
 
