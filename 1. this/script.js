@@ -16,8 +16,12 @@ const person = {
     console.log(this.first_name + " " + this.last_name);
 
     /******* Nested Function(inside Method)*****/
-    const self = this;
-    const adult = function () {
+    // const self = this; //self or that
+    // const adult = function () {
+    //   console.log(self.age >= 18 && self.age >= 21);
+    // };
+    //solution 2
+    const adult = () => {
       console.log(self.age >= 18 && self.age >= 21);
     };
     adult();
