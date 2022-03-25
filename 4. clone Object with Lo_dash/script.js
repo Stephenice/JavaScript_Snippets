@@ -1,8 +1,8 @@
 "use strict";
 //const _ = require("lodash");
 
-const ver = _.VERSION;
-console.log(ver);
+// const ver = _.VERSION;
+// console.log(ver);
 
 const person2 = {
   first_name: "mary",
