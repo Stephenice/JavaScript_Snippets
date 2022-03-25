@@ -8,6 +8,6 @@ const shoppingList = {
 let [firstItem, secondItem, thirdItem] = shoppingList.food;
 console.log(firstItem, secondItem);
 
-// switching
+// Swapping variables
 [firstItem, secondItem] = [secondItem, firstItem];
 console.log(firstItem, secondItem);
