@@ -33,5 +33,5 @@ console.log(e, f, g);
 console.log(e, f, g);
 
 //Assigning the rest of an array to a variable
-[c, d, , f = "oil", g = "orange"] = shoppingList.food;
-console.log();
+[c, ...f] = shoppingList.food;
+console.log(f);
