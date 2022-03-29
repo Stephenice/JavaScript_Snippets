@@ -24,3 +24,6 @@ function checkTruthyFalsy(testValue) {
 checkTruthyFalsy(0);
 checkTruthyFalsy("1");
 checkTruthyFalsy([].length);
+checkTruthyFalsy(0);
+checkTruthyFalsy(" ");
+checkTruthyFalsy("false");
