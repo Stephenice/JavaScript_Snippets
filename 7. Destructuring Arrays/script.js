@@ -35,3 +35,4 @@ console.log(e, f, g);
 //Assigning the rest of an array to a variable
 [c, ...f] = shoppingList.food;
 console.log(f);
+console.log(typeof f);
