@@ -26,3 +26,15 @@ function food(f1) {
 }
 
 food(["rice", "bean", "bread"]);
+
+// Object and shallow copy
+
+const person = {
+  firstName: "stephen",
+  lastName: "billy",
+};
+
+const personCopy = { ...person };
+console.log((personCopy.age = 30));
+console.log(person);
+console.log(personCopy);
