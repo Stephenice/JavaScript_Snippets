@@ -68,7 +68,6 @@ function getCountryName(country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
     .then(response => {
       if (!response.ok) throw new Error('No country');
-
       return response.json();
     })
     .then(data => {
