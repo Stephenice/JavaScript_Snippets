@@ -66,12 +66,17 @@ function renderCountry(data, className = '') {
 function getCountryName(country) {
   // Main country
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('No country');
+
+      return response.json();
+    })
     .then(data => {
       console.log(data[0]);
       renderCountry(data[0]);
 
       // get neighbouring countries
+      if (!data[0].borders) throw new Error('No border');
       const [...getNeighbourCountry] = data[0].borders;
       console.log(getNeighbourCountry);
 
@@ -79,29 +84,20 @@ function getCountryName(country) {
       const arr = [];
       const allPromise = getNeighbourCountry.forEach(element => {
         arr.push(fetch(`https://restcountries.com/v2/alpha/${element}`));
-
-        //fetch(`https://restcountries.com/v2/alpha/${element}`);
-        //console.log(element);
       });
       console.log(arr);
       return Promise.all(arr);
-
-      // 2
-      // return fetch(
-      //   `https://restcountries.com/v2/alpha/${getNeighbourCountry[0]}`
-      // );
-      // 3
     })
     .then(response => {
       response.forEach(res => process(res.json()));
+    })
+    .catch(err => {
+      console.log(err.message);
     });
-
-  //.then(data => console.log(data));
-  // neighbour countries
 
   let process = data => {
     data.then(dat => renderCountry(dat, 'neighbour'));
   };
 }
 
-getCountryName('usa');
+getCountryName('au');
