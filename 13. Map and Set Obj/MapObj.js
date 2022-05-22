@@ -72,3 +72,25 @@ console.log([...question]);
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+// Set
+const setArray = ["rice", "bean", "bread", "rice", "bean", "bread"];
+// How to create Set use: new Set();
+const uniqueFood = new Set(setArray);
+console.log(uniqueFood);
+
+console.log(uniqueFood.size);
+console.log(uniqueFood.has("rice"));
+console.log(uniqueFood.add("pizza"));
+// console.log(uniqueFood.delete("rice"));
+// console.log(uniqueFood.clear());
+console.log(uniqueFood);
+
+// looping set
+for (const set_values of uniqueFood) {
+  console.log(set_values);
+}
+
+//Convert Set to Array- spreed operator work on all Iterables
+const set_to_array = [...uniqueFood];
+console.log(set_to_array);

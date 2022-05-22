@@ -7,7 +7,11 @@ async function searchStates(searchText) {
   const res = await fetch("./state_capitals.json");
   const states = await res.json();
   // get match to input
+
+  console.log(states);
   let matches = states.filter((state) => {
+    console.log(state);
+
     const regex = new RegExp(`^${searchText}`, "gi");
     return state.name.match(regex) || state.abbr.match(regex);
   });
@@ -39,4 +43,5 @@ function outputHtml(matches) {
 // searchStates();
 search.addEventListener("input", function () {
   searchStates(search.value);
+  console.log(search.value);
 });
