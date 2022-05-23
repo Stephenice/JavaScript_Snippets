@@ -1,3 +1,4 @@
+// min_max without using any inbuild method
 const min_max = [3, 8, -2, 0, 10];
 
 function minMax(min_max) {
