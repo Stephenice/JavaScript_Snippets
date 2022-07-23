@@ -28,11 +28,12 @@ const render = (data) => {
    <li> ${data[indexData].text} ${data[indexData].date} 
    <button class="delete">Delete</button> </li>
    `;
+
   const del = document.querySelectorAll(".delete");
   console.log(del);
 
-  if (del.length > 0) {
-    console.log("yes");
+  if (del.length >= 0) {
+    console.log(del[0]);
   }
 
   ui_lists.insertAdjacentHTML("beforeend", html);
