@@ -25,18 +25,22 @@ const render = (data) => {
   const indexData = data.length - 1;
 
   const html = `
-   <li> ${data[indexData].text} ${data[indexData].date} 
-   <button class="delete">Delete</button> </li>
+   <li class="d${indexData}"> ${data[indexData].text} ${data[indexData].date} 
+   <button class="delete${indexData}">Delete</button> </li>
    `;
+  ui_lists.insertAdjacentHTML("beforeend", html);
 
-  const del = document.querySelectorAll(".delete");
+  const x = `delete${indexData}`;
+  const del = document.querySelector(`.${x}`);
   console.log(del);
 
-  if (del.length >= 0) {
-    console.log(del[0]);
-  }
-
-  ui_lists.insertAdjacentHTML("beforeend", html);
+  del.addEventListener("click", (e) => {
+    console.log(indexData);
+    document.querySelector(`.d${indexData}`).style.display = "none";
+    // delList.classList.remove;
+    toDoListArray.splice(indexData, 1);
+    console.log(toDoListArray);
+  });
 };
 
 submit.addEventListener("click", dataResult);
