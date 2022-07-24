@@ -23,24 +23,29 @@ const dataResult = (e) => {
 
 const render = (data) => {
   const indexData = data.length - 1;
-
   const html = `
    <li class="d${indexData}"> ${data[indexData].text} ${data[indexData].date} 
    <button class="delete${indexData}">Delete</button> </li>
    `;
   ui_lists.insertAdjacentHTML("beforeend", html);
+  delArray(indexData);
+  return indexData;
+};
 
+function delArray(indexData) {
   const x = `delete${indexData}`;
   const del = document.querySelector(`.${x}`);
   console.log(del);
 
   del.addEventListener("click", (e) => {
     console.log(indexData);
-    document.querySelector(`.d${indexData}`).style.display = "none";
-    // delList.classList.remove;
+    const y = document.querySelector(`.d${indexData}`);
+    ui_lists.removeChild(y);
+    // y.style.display = "none";
     toDoListArray.splice(indexData, 1);
+
     console.log(toDoListArray);
   });
-};
+}
 
 submit.addEventListener("click", dataResult);
